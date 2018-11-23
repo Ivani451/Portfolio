@@ -4,11 +4,14 @@
   "description": "My Portfolio",
   "main": "index.js",
   "scripts": {
+    "deploy": "gh-pages -d dist",
     "sass": "node-sass -w scss/ -o dist/css/ --recursive"
   },
   "author": "Ivani Aviles-Carbajal",
   "license": "ISC",
+  "homepage": "https://ivani451.github.io/portfolio",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.9.3"
   }
 }

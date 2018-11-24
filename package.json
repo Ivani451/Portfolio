@@ -9,7 +9,7 @@
   },
   "author": "Ivani Aviles-Carbajal",
   "license": "ISC",
-  "homepage": "https://ivani451.github.io/portfolio",
+  "homepage": "https://ivani451.github.io/Portfolio/",
   "dependencies": {
     "gh-pages": "^2.0.1",
     "node-sass": "^4.9.3"

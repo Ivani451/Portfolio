@@ -6,110 +6,149 @@
 
 html {
   scroll-behavior: smooth;
-
-
-body {
   @include background();
-  color: #fff;
-  height: 100%;
-  margin: 0;
-  font-family: Tahoma, Verdana, sans-serif;
-  line-height: 1.7;
-}
 
-// Headings
-h1,
-h2 {
-  margin: 0;
-  font-weight: 500;
-
-  &.lg-heading {
-    font-size: 4.5rem;
+  body {
+    @include background();
+    color: #fff;
+    height: 100%;
+    margin: 0;
+    font-family: Tahoma, Verdana, sans-serif;
+    line-height: 1.7;
   }
 
-  &.sm-heading {
-    margin-bottom: 2rem;
-    padding: 0.2rem 1rem;
+  // Headings
+  h1,
+  h2 {
+    margin: 0;
+    font-weight: 500;
+
+    &.lg-heading {
+      font-size: 5rem;
+    }
+
+    &.sm-heading {
+      margin-bottom: 2rem;
+      padding: 0.2rem 1rem;
+    }
   }
-}
 
-a {
-  color: #fff;
-  text-decoration: none;
-}
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
 
-header {
-  position: fixed;
-  z-index: 1;
-  width: 100%;
-}
+  header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+  }
 
-main {
-  padding: 4rem 4rem 1rem 4rem;
-  height: 100%;
-  z-index: -1;
+  main {
+    padding: 4rem 4rem 1rem 4rem;
+    height: 100%;
+    z-index: -1;
 
-  .icons {
-    margin-top: 1rem;
+    .icons {
+      margin-top: 1rem;
 
-    a {
-      padding: 0.5rem;
+      a {
+        padding: 0.5rem;
 
-      &:hover {
-        color: $secondary-color;
-        @include easeOut();
+        &:hover {
+          color: $secondary-color;
+          @include easeOut();
+        }
+      }
+    }
+
+    h1 {
+      margin-top: 20vh;
+    }
+
+    #projects {
+      #recifridge,
+      #cinemm {
+        margin: 3em 0 0 0;
       }
     }
   }
 
-  h1 {
-    margin-top: 20vh;
+  .text-secondary {
+    color: $secondary-color;
+  }
+
+  nav {
+    position: fixed;
+  }
+
+  ul {
+    margin-top: 3%;
+    list-style-type: none;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  li {
+    display: inline;
+
+    :hover {
+      color: $secondary-color;
+      @include easeOut();
+    }
+  }
+
+  #contact {
+    padding: 2rem 2rem 5rem 2rem;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-weight: bold;
+  }
+
+  hr {
+    margin-top: 3rem;
+    margin-right: 35vw;
   }
 
   #projects {
+    margin: 30rem 0 30rem 0;
+    text-align: center;
+
     #recifridge,
     #cinemm {
-      margin: 3em 0 0 0;
+      display: flex;
+      flex-direction: row;
     }
   }
 }
 
-.text-secondary {
-  color: $secondary-color;
+// typewriter effect for the large header (name)
+.lg-heading {
+  font-family: monospace;
+  overflow: hidden; // makes sure my name header is not shown before the animation
+  border-right: 0.15em solid orange; //typwriter cursor
+  white-space: nowrap; // Keeps the content on a single line
+  margin: 2em 0 0 0 auto;
+  letter-spacing: 0.15em;
+  animation: typing 3s steps(27, end), blinking-cursor 0.5s step-end infinite; //animation keeeps going until it hits the right-end of the webpage
 }
 
-nav {
-  position: fixed;
-}
-
-ul {
-  margin-top: 3%;
-  list-style-type: none;
-  text-align: center;
-  font-weight: bold;
-}
-
-li {
-  display: inline;
-
-  :hover {
-    color: $secondary-color;
-    @include easeOut();
+/* The typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }
 
-#contact {
-  padding: 2rem 2rem 5rem 2rem;
-  font-family: Tahoma, Verdana, sans-serif;
-  font-weight: bold;
-}
-
-hr {
-  margin-top: 3rem;
-  margin-right: 35vw;
-}
-
-#projects {
-  margin: 30rem 0 30rem 0;
-  text-align: center;
+// typewrite cursor effect
+@keyframes blinking-cursor {
+  from,
+  to {
+    border-color: transparent;
+  }
+  55% {
+    border-color: white;
+  }
 }
